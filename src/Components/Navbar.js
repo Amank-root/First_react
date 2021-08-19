@@ -1,51 +1,46 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Content from './Hero';
-import Footer from './Footer';
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown, Button, Form, FormControl } from 'react-bootstrap'
+// import Content from './Hero';
+// import Footer from './Footer';
 
-function Navbar(props) {
+function Navbarg(props) {
     return (
-        <>
-            <header className="text-gray-600 body-font">
-                <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                    <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                        </svg>
-                        <span className="ml-3 text-xl">{props.title}</span>
-                    </a>
-                    <Router>
 
-                    
-                        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <Navbar bg="light" expand="lg">
+            <Navbar.Brand href="#">{ props.title }</Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Collapse id="navbarScroll">
+                <Nav
+                    className="mr-auto my-2 my-lg-0"
+                    style={{ maxHeight: '100px' }}
+                    navbarScroll
+                >
+                    <Nav.Link href="#action1">Home</Nav.Link>
+                    <Nav.Link href="#action2">Link</Nav.Link>
+                    <NavDropdown title="Link" id="navbarScrollingDropdown">
+                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Link href="#" disabled>
+                        Link
+                    </Nav.Link>
+                </Nav>
+                <Form className="d-flex">
+                    <FormControl
+                        type="search"
+                        placeholder="Search"
+                        className="mr-2"
+                        aria-label="Search"
+                    />
+                    <Button variant="outline-success">Search</Button>
+                </Form>
+            </Navbar.Collapse>
+        </Navbar>
 
-
-                            <a className="mr-5 hover:text-gray-900"  ><Link to="/">Home</Link></a>
-                            <a className="mr-5 hover:text-gray-900" ><Link to="./Content">Content</Link></a>
-                            {/* <a className="mr-5 hover:text-gray-900" ><Link to="/Footer">Footer</Link></a> */}
-                            <a className="mr-5 hover:text-gray-900">Fourth Link</a>
-                        </nav>
-                        <Switch>
-                            <Route path="/Content">
-                              <Content />
-                            </Route>
-                            <Route path="/Footer">
-                              <Footer />
-                            </Route>
-                            {/* <Route path="/">
-                              <App />
-                            </Route> */}
-                        </Switch>
-                    <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-                    </Router>
-                </div>
-            </header>
-        </>
     )
 }
 
-export default Navbar
+export default Navbarg

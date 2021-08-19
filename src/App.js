@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Hero from './Components/Hero';
-import Footer from './Components/Footer';
+// import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <>
       <Navbar title="React" />
       <Hero />
-      <Footer id="#foot" />
+      {/* <Footer title="Footer" /> */}
     </>
       );
 }
