@@ -1,14 +1,16 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from 'react'
-import Content from './Components/Content';
+import Hero from './Components/Hero';
+import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <>
       <Navbar title="React" />
-      <Content />
+      <Hero />
+      <Footer id="#foot" />
     </>
       );
 }
